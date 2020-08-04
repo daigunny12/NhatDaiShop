@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NhatDaiShop.Model.Models
 {
@@ -20,8 +16,9 @@ namespace NhatDaiShop.Model.Models
 
         [Required]
         public string Alias { set; get; }
+
         public string DesCription { set; get; }
-        public int?  ParentId { set; get; }
+        public int? ParentId { set; get; }
         public int? DisplayOrder { set; get; }
         public string Image { set; get; }
 
@@ -30,6 +27,5 @@ namespace NhatDaiShop.Model.Models
         public virtual IEnumerable<Product> Products { set; get; }
 
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
-
     }
 }
