@@ -18,11 +18,17 @@ namespace NhatDaiShop.Model.Models
         public string Alias { set; get; }
 
         public int CategoryID { set; get; }
+        [MaxLength(256)]
         public string Image { set; get; }
-        public XElement MorelImages { set; get; }
+
+        [Column(TypeName = "xml")]
+        public string MorelImages { set; get; }
+
         public decimal Price { set; get; }
         public decimal? PromotionPrice { set; get; }
         public int? Warranty { set; get; }
+
+        [MaxLength(500)]
         public string Description { set; get; }
         public string Content { set; get; }
 
