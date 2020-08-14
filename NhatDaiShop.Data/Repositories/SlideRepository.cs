@@ -3,7 +3,7 @@ using NhatDaiShop.Model.Models;
 
 namespace NhatDaiShop.Data.Repositories
 {
-    public interface ISlideRepository
+    public interface ISlideRepository : IRepository<Slide>
     {
     }
 

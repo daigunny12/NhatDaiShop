@@ -3,7 +3,7 @@ using NhatDaiShop.Model.Models;
 
 namespace NhatDaiShop.Data.Repositories
 {
-    public interface IFooterReponsitory
+    public interface IFooterReponsitory: IRepository<Footer>
     {
     }
 

@@ -3,7 +3,7 @@ using NhatDaiShop.Model.Models;
 
 namespace NhatDaiShop.Data.Repositories
 {
-    public interface ISupportOnlineRepository
+    public interface ISupportOnlineRepository : IRepository<SupportOnline>
     {
     }
 

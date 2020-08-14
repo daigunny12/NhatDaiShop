@@ -41,7 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NhatDaiShop.Data\NhatDaiShop.Data.csproj">
+      <Project>{c398a058-5f17-4ca9-82a2-645c80aa97d7}</Project>
+      <Name>NhatDaiShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NhatDaiShop.Model\NhatDaiShop.Model.csproj">
+      <Project>{8c0c35ef-0711-48dc-9964-5c6609508294}</Project>
+      <Name>NhatDaiShop.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

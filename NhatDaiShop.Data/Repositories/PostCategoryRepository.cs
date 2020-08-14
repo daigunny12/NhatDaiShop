@@ -3,7 +3,7 @@ using NhatDaiShop.Model.Models;
 
 namespace NhatDaiShop.Data.Repositories
 {
-    public interface IPostCategoryRepository
+    public interface IPostCategoryRepository : IRepository<PostCategory>
     {
     }
 
