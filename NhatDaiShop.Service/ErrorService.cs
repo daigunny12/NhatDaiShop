@@ -30,7 +30,7 @@ namespace NhatDaiShop.Service
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _unitOfWork.Commit();
         }
     }
 }

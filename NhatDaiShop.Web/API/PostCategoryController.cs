@@ -3,9 +3,11 @@ using NhatDaiShop.Service;
 using NhatDaiShop.Web.Infrastructure.Core;
 using System.Net;
 using System.Net.Http;
+using System.Web.Http;
 
 namespace NhatDaiShop.Web.API
 {
+    [RoutePrefix("api/postcategory")]
     public class PostCategoryController : ApiControllerBase
     {
         private IPostCategoryService _postCategoryService;
@@ -29,32 +31,24 @@ namespace NhatDaiShop.Web.API
                     var category = _postCategoryService.Add(postCategory);
                     _postCategoryService.Save();
 
-                    response = request.CreateResponse(HttpStatusCode.Created,category );
-                } 
+                    response = request.CreateResponse(HttpStatusCode.Created, category);
+                }
                 return response;
             });
         }
 
+        [Route("getall")]
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
             return createHttpResponse(request, () =>
             {
-                HttpResponseMessage response = null;
-                if (ModelState.IsValid)
-                {
-                    response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var ListCategory = _postCategoryService.GetAll();
-                    _postCategoryService.Save();
+                var ListCategory = _postCategoryService.GetAll();
 
-                    response = request.CreateResponse(HttpStatusCode.OK, ListCategory);
-                }
+
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, ListCategory);
                 return response;
             });
         }
-
 
         public HttpResponseMessage Put(HttpRequestMessage request, PostCategory postCategory)
         {
