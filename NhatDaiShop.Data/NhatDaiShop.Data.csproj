@@ -62,6 +62,10 @@
     <Compile Include="Migrations\202008131052382_InitialDB.designer.cs">
       <DependentUpon>202008131052382_InitialDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008210813550_AddErrorTable.cs" />
+    <Compile Include="Migrations\202008210813550_AddErrorTable.designer.cs">
+      <DependentUpon>202008210813550_AddErrorTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NhatDaiShopDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +104,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008131052382_InitialDB.resx">
       <DependentUpon>202008131052382_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008210813550_AddErrorTable.resx">
+      <DependentUpon>202008210813550_AddErrorTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
