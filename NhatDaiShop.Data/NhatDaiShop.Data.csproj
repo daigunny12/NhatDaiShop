@@ -58,13 +58,9 @@
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\202008131052382_InitialDB.cs" />
-    <Compile Include="Migrations\202008131052382_InitialDB.designer.cs">
-      <DependentUpon>202008131052382_InitialDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008210813550_AddErrorTable.cs" />
-    <Compile Include="Migrations\202008210813550_AddErrorTable.designer.cs">
-      <DependentUpon>202008210813550_AddErrorTable.cs</DependentUpon>
+    <Compile Include="Migrations\202008221036022_Idb.cs" />
+    <Compile Include="Migrations\202008221036022_Idb.designer.cs">
+      <DependentUpon>202008221036022_Idb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NhatDaiShopDBContext.cs" />
@@ -103,11 +99,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008131052382_InitialDB.resx">
-      <DependentUpon>202008131052382_InitialDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008210813550_AddErrorTable.resx">
-      <DependentUpon>202008210813550_AddErrorTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008221036022_Idb.resx">
+      <DependentUpon>202008221036022_Idb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

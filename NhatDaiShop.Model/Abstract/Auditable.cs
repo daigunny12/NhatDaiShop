@@ -13,7 +13,7 @@ namespace NhatDaiShop.Model.Models
         public DateTime? UpdatedDate { set; get; }
 
         [MaxLength(256)]
-        public string UpdateBy { set; get; }
+        public string UpdatedBy { set; get; }
 
         [MaxLength(256)]
         public string MetaKeyword { set; get; }

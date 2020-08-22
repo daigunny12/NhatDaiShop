@@ -11,7 +11,7 @@ namespace NhatDaiShop.Model.Models
         DateTime?  CreatedDate { set; get; }
         string CreatedBy { set; get; }
         DateTime? UpdatedDate { set; get; }
-        string UpdateBy { set; get; }
+        string UpdatedBy { set; get; }
 
         string MetaKeyword { set; get; }
         string MetaDescription { set; get; }
