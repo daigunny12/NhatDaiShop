@@ -1,9 +1,10 @@
-﻿using NhatDaiShop.Model.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using NhatDaiShop.Model.Models;
 using System.Data.Entity;
 
 namespace NhatDaiShop.Data
 {
-    public class NhatDaiShopDBContext : DbContext
+    public class NhatDaiShopDBContext : IdentityDbContext<ApplicationUser>
     {
         public NhatDaiShopDBContext() : base("NhatDaiShopConnection")
         {
@@ -29,9 +30,15 @@ namespace NhatDaiShop.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errors { set; get; }
 
+        public static NhatDaiShopDBContext Create()
+        {
+            return new NhatDaiShopDBContext();
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("ApplicationUserRoles");
+            modelBuilder.Entity<IdentityUserLogin>().HasKey(i => i.UserId).ToTable("ApplicationUserLogins");
         }
 
     }
