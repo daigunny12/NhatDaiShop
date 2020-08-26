@@ -1,6 +1,10 @@
 ﻿/// <reference path="../bower_components/angular/angular.js" />
 (function () {
-    angular.module('nhatdaishop', ['nhatdaishop.products','nhatdaishop.common']).config(config);
+    angular.module('nhatdaishop',
+        ['nhatdaishop.products',
+            'nhatdaishop.products_category',
+            'nhatdaishop.common'
+        ]).config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 

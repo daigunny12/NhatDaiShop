@@ -172,86 +172,27 @@
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a ui-sref="products" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Product</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a ui-sref="product_add" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Product add</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../index3.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Widgets
-                                    <span class="right badge badge-danger">New</span>
-                                </p>
-                            </a>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
-                                    Layout Options
+                                    Sản phẩm
                                     <i class="fas fa-angle-left right"></i>
                                     <span class="badge badge-info right">6</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../layout/top-nav.html" class="nav-link">
+                                    <a ui-sref="products_categories" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Top Navigation</p>
+                                        <p>Danh mục sản phẩm</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                                    <a ui-sref="products" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Top Navigation + Sidebar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../layout/boxed.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Boxed</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../layout/fixed-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fixed Sidebar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../layout/fixed-topnav.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fixed Navbar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../layout/fixed-footer.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fixed Footer</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../layout/collapsed-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Collapsed Sidebar</p>
+                                        <p>Sản phẩm</p>
                                     </a>
                                 </li>
                             </ul>
@@ -696,32 +637,13 @@
         </aside>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <div ui-view></div>
             <!-- Main content -->
             <section class="content">
-                <!-- Default box -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Title</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        Start creating your amazing application!
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        Footer
-                    </div>
-                    <!-- /.card-footer-->
-                </div>
-                <!-- /.card -->
+            
+                
+                <div ui-view></div>
+
+
             </section>
             <!-- /.content -->
         </div>
@@ -750,11 +672,13 @@
     <script src="~/bower_components/angular/angular.js"></script>
     <script src="~/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/app/shared/modules/nhatdaishop.common.js"></script>
+    <script src="~/app/shared/services/apiService.js"></script>
     <script src="~/app/components/products/products.module.js"></script>
+    <script src="~/app/components/product_categories/productCategory.Module.js"></script>
     <script src="~/app/app.js"></script>
+    <script src="~/app/components/product_categories/productCategoryListController.js"></script>
     <script src="~/app/components/products/productAddController.js"></script>
     <script src="~/app/components/products/productListController.js"></script>
     <script src="~/app/components/home/homeController.js"></script>
-
 </body>
 </html>

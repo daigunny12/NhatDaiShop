@@ -83,6 +83,7 @@ namespace NhatDaiShop.Web.API
             });
         }
 
+        [Route("delete")]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
             return createHttpResponse(request, () =>

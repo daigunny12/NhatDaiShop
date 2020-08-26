@@ -208,6 +208,7 @@
   <ItemGroup>
     <Compile Include="API\AccountController.cs" />
     <Compile Include="API\PostCategoryController.cs" />
+    <Compile Include="API\ProductCategoryController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -223,9 +224,13 @@
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
     <Compile Include="Infrastructure\Extentions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguragtion.cs" />
+    <Compile Include="Models\OrderDetailViewModel.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\ProductCategoryViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -240,7 +245,11 @@
     <Content Include="app\components\products\productEditView.html" />
     <Content Include="app\components\products\productListController.js" />
     <Content Include="app\components\products\productListView.html" />
+    <Content Include="app\components\product_categories\productCategoryListController.js" />
+    <Content Include="app\components\product_categories\productCategoryListView.html" />
+    <Content Include="app\components\product_categories\productCategory.Module.js" />
     <Content Include="app\shared\modules\nhatdaishop.common.js" />
+    <Content Include="app\shared\services\apiService.js" />
     <Content Include="Assets\admin\css\adminlte.css" />
     <Content Include="Assets\admin\css\adminlte.min.css" />
     <Content Include="Assets\admin\css\alt\adminlte.components.css" />
@@ -710,12 +719,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
-    <Folder Include="app\components\product_categoties\" />
     <Folder Include="app\components\roles\" />
     <Folder Include="app\components\users\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="app\shared\services\" />
     <Folder Include="App_Data\" />
     <Folder Include="Assets\admin\libs\" />
     <Folder Include="Assets\client\" />

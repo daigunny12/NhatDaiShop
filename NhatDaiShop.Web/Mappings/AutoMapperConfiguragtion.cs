@@ -15,6 +15,10 @@ namespace NhatDaiShop.Web.Mappings
                 cfg.CreateMap<PostTag, PostTagViewModel>();
                 cfg.CreateMap<PostCategory, PostCategoryViewModel>();
                 cfg.CreateMap<Tag, TagViewModel>();
+                cfg.CreateMap<Product, ProductViewModel>();
+                cfg.CreateMap<ProductCategory, ProductCategoryViewModel>();
+                cfg.CreateMap<Order, OrderViewModel>();
+                cfg.CreateMap<OrderDetail, OrderDetailViewModel>();
             });
             Mapper = config.CreateMapper();
             config.AssertConfigurationIsValid();
