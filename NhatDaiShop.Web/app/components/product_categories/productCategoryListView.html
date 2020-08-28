@@ -34,6 +34,16 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" ng-model="keyword" placeholder="Nhập sản phẩm bạn muốn tìm kiếm" aria-label="Nhập sản phẩm bạn muốn tìm kiếm" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary"  type="button" id="button-addon2" ng-click="search()">Tìm kiếm </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -61,12 +71,23 @@
                                     </td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <span class="fa-pull-right">Trang: {{page +1}} - Tổng số bản ghi: {{totalCount}}</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+
                         </table>
                     </div>
                 </div>
             </div>
         </div>
         <!-- /.card-body -->
+        <div class="card-footer">
+            <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getproductCategories(page)"></pager-directive>
+        </div>
     </div>
     <!-- /.card -->
 </section>

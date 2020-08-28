@@ -222,6 +222,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extentions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguragtion.cs" />
     <Compile Include="Models\OrderDetailViewModel.cs" />
@@ -248,9 +249,12 @@
     <Content Include="app\components\product_categories\productCategoryListController.js" />
     <Content Include="app\components\product_categories\productCategoryListView.html" />
     <Content Include="app\components\product_categories\productCategory.Module.js" />
+    <Content Include="app\shared\directives\pagerDirective.html" />
+    <Content Include="app\shared\directives\pagerDirective.js" />
     <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\modules\nhatdaishop.common.js" />
     <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\notificationService.js" />
     <Content Include="Assets\admin\css\adminlte.css" />
     <Content Include="Assets\admin\css\adminlte.min.css" />
     <Content Include="Assets\admin\css\alt\adminlte.components.css" />
@@ -704,6 +708,10 @@
     <Content Include="bower_components\slimScroll\examples\style.css" />
     <Content Include="bower_components\slimScroll\jquery.slimscroll.js" />
     <Content Include="bower_components\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="bower_components\toastr\toastr.css" />
+    <Content Include="bower_components\toastr\toastr.js" />
+    <Content Include="bower_components\toastr\toastr.min.css" />
+    <Content Include="bower_components\toastr\toastr.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -1073,6 +1081,13 @@
     <Content Include="bower_components\angular-ui-router\tsconfig.docgen.json" />
     <Content Include="bower_components\angular-ui-router\typedoc.json" />
     <Content Include="bower_components\angular-ui-router\yarn.lock" />
+    <Content Include="bower_components\toastr\.bower.json" />
+    <Content Include="bower_components\toastr\bower.json" />
+    <Content Include="bower_components\toastr\LICENSE" />
+    <Content Include="bower_components\toastr\README.md" />
+    <Content Include="bower_components\toastr\toastr.js.map" />
+    <Content Include="bower_components\toastr\toastr.less" />
+    <Content Include="bower_components\toastr\toastr.scss" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>

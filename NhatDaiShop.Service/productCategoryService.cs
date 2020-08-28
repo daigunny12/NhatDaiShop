@@ -1,11 +1,7 @@
 ﻿using NhatDaiShop.Data.Infrastructure;
 using NhatDaiShop.Data.Repositories;
 using NhatDaiShop.Model.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NhatDaiShop.Service
 {
@@ -19,6 +15,8 @@ namespace NhatDaiShop.Service
 
         IEnumerable<ProductCategory> GetAll();
 
+        IEnumerable<ProductCategory> GetAll(string keyword);
+
         IEnumerable<ProductCategory> GetAllByParentId(int parentId);
 
         ProductCategory GetById(int id);
@@ -26,7 +24,7 @@ namespace NhatDaiShop.Service
         void Save();
     }
 
-    public class ProductCategoryService: IProductCategoryService
+    public class ProductCategoryService : IProductCategoryService
     {
         private IProductCategoryReponsitory _ProductCategoryRepository;
         private IUnitOfWork _unitOfWork;
@@ -50,6 +48,19 @@ namespace NhatDaiShop.Service
         public IEnumerable<ProductCategory> GetAll()
         {
             return _ProductCategoryRepository.GetAll();
+        }
+
+        public IEnumerable<ProductCategory> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Alias.Contains(keyword));
+            }
+            else
+            {
+                return _ProductCategoryRepository.GetAll();
+
+            }
         }
 
         public IEnumerable<ProductCategory> GetAllByParentId(int parentId)
