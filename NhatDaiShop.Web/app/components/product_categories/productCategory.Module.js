@@ -9,6 +9,14 @@
             url: "/products_categories",
             templateUrl: "/app/components/product_categories/productCategoryListView.html",
             controller: "productCategoryListController"
+        }).state('add_products_category', {
+            url: "/add_products_category",
+            templateUrl: "/app/components/product_categories/productCategoryAddView.html",
+            controller: "productCategoryAddController"
+        }).state('edit_products_category', {
+            url: "/edit_products_category",
+            templateUrl: "/app/components/product_categories/productCategoryEditView.html",
+            controller: "productCategoryEditController"
         });
     }
 })();

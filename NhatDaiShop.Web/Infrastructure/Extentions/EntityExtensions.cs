@@ -46,30 +46,24 @@ namespace NhatDaiShop.Web.Infrastructure.Extentions
             post.Status = postVm.Status;
         }
 
-        public static void UpdateProductCategory(this Product product, ProductViewModel productVm)
+        public static void UpdateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryVm)
         {
-            product.ID = productVm.ID;
-            product.Name = productVm.Name;
-            product.Description = productVm.Description;
-            product.Alias = productVm.Alias;
-            product.CategoryID = productVm.CategoryID;
-            product.Content = productVm.Content;
-            product.Image = productVm.Image;
-            product.MorelImages = productVm.MorelImages;
-            product.Price = productVm.Price;
-            product.PromotionPrice = productVm.PromotionPrice;
-            product.Warranty = productVm.Warranty;
-            product.HomeFlag = productVm.HomeFlag;
-            product.HotFlag = productVm.HotFlag;
-            product.ViewCount = productVm.ViewCount;
+            productCategory.ID = productCategoryVm.ID;
+            productCategory.Name = productCategoryVm.Name;
+            productCategory.DesCription = productCategoryVm.DesCription;
+            productCategory.Alias = productCategoryVm.Alias;
+            productCategory.ParentId = productCategoryVm.ParentId;
+            productCategory.DisplayOrder = productCategoryVm.DisplayOrder;
+            productCategory.Image = productCategoryVm.Image;
+            productCategory.HomeFlag = productCategoryVm.HomeFlag;
 
-            product.CreatedDate = productVm.CreatedDate;
-            product.CreatedBy = productVm.CreatedBy;
-            product.UpdatedDate = productVm.UpdatedDate;
-            product.UpdatedBy = productVm.UpdatedBy;
-            product.MetaKeyword = productVm.MetaKeyword;
-            product.MetaDescription = productVm.MetaDescription;
-            product.Status = productVm.Status;
+            productCategory.CreatedDate = productCategoryVm.CreatedDate;
+            productCategory.CreatedBy = productCategoryVm.CreatedBy;
+            productCategory.UpdatedDate = productCategoryVm.UpdatedDate;
+            productCategory.UpdatedBy = productCategoryVm.UpdatedBy;
+            productCategory.MetaKeyword = productCategoryVm.MetaKeyword;
+            productCategory.MetaDescription = productCategoryVm.MetaDescription;
+            productCategory.Status = productCategoryVm.Status;
             //product.Tags = productVm.Tags;
             //product.Quantity = productVm.Quantity;
             //product.OriginalPrice = productVm.OriginalPrice;
