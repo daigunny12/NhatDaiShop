@@ -70,7 +70,7 @@ namespace NhatDaiShop.Web.API
             });
         }
 
-        [Route("getbyid")]
+        [Route("getbyid/{id:int}")]
         [HttpGet]
         public HttpResponseMessage GetById(HttpRequestMessage request, int id)
         {
@@ -103,6 +103,7 @@ namespace NhatDaiShop.Web.API
                 {
                     var newProductCategory = new ProductCategory();
                     newProductCategory.UpdateProductCategory(productCategoryViewModel);
+                    newProductCategory.CreatedDate = DateTime.Now;
                     _productCategoryService.Add(newProductCategory);
                     _productCategoryService.Save();
 
@@ -132,6 +133,7 @@ namespace NhatDaiShop.Web.API
                 {
                     var dbProductCategory = _productCategoryService.GetById(productCategoryViewModel.ID);
                     dbProductCategory.UpdateProductCategory(productCategoryViewModel);
+                    dbProductCategory.UpdatedDate = DateTime.Now;
                     _productCategoryService.Add(dbProductCategory);
                     _productCategoryService.Save();
 
