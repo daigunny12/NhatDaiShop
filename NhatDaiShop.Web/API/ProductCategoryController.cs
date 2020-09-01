@@ -145,5 +145,32 @@ namespace NhatDaiShop.Web.API
                 return response;
             });
         }
+
+        [Route("delete")]
+        [HttpDelete]
+        [AllowAnonymous]
+        public HttpResponseMessage Delete(HttpRequestMessage request,int  id)
+        {
+            return createHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var oldProductCategory = _productCategoryService.Delete(id);          
+                    _productCategoryService.Save();
+
+                    IMapper mapper = AutoMapperConfiguragtion.Mapper;
+                    var reponseData = mapper.Map<ProductCategory, ProductCategoryViewModel>(oldProductCategory);
+
+                    response = request.CreateResponse(HttpStatusCode.OK, reponseData);
+                }
+                return response;
+            });
+        }
     }
 }

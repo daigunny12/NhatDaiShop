@@ -7,7 +7,8 @@
         return {
             get: get,
             post: post,
-            put: put
+            put: put, 
+            del: del
         }
 
         function post(url, data, sucess, failure) {
@@ -43,5 +44,18 @@
                 failure(error);
             });
         }
+        function del(url, data, sucess, failure) {
+            $http.delete(url, data).then(function (result) {
+                sucess(result);
+            }, function (error) {
+                console.log(error.status)
+                if (error.Status === 401) {
+                    notificationService.error('Authenticate is required');
+                } else if (failure != null) {
+                    failure(error);
+                }
+            });
+        }
+  
     }
 })(angular.module('nhatdaishop.common'));
