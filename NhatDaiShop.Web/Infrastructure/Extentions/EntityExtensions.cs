@@ -68,5 +68,33 @@ namespace NhatDaiShop.Web.Infrastructure.Extentions
             //product.Quantity = productVm.Quantity;
             //product.OriginalPrice = productVm.OriginalPrice;
         }
+
+        public static void UpdateProduct(this Product product, ProductViewModel productVm)
+        {
+            product.ID = productVm.ID;
+            product.Name = productVm.Name;
+            product.Alias = productVm.Alias;
+            product.MorelImages = productVm.MorelImages;
+            product.CategoryID = productVm.CategoryID;
+            product.Image = productVm.Image;
+
+            product.Price = productVm.Price;
+            product.PromotionPrice = productVm.PromotionPrice;
+            product.Warranty = productVm.Warranty;
+            product.Description = productVm.Description;
+            product.Content = productVm.Content;
+            product.HotFlag = productVm.HotFlag;
+            product.ViewCount = productVm.ViewCount;
+            product.HomeFlag = productVm.HomeFlag;
+
+
+            product.CreatedDate = productVm.CreatedDate;
+            product.CreatedBy = productVm.CreatedBy;
+            product.UpdatedDate = productVm.UpdatedDate;
+            product.UpdatedBy = productVm.UpdatedBy;
+            product.MetaKeyword = productVm.MetaKeyword;
+            product.MetaDescription = productVm.MetaDescription;
+            product.Status = productVm.Status;
+        }
     }
 }

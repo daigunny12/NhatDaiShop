@@ -5,12 +5,12 @@ using System.Linq;
 
 namespace NhatDaiShop.Data.Repositories
 {
-    public interface IProductCategoryReponsitory : IRepository<ProductCategory>
+    public interface IProductCategoryRepository : IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }
 
-    public class ProductCategoryRepository : RepositoryBase<ProductCategory>, IProductCategoryReponsitory
+    public class ProductCategoryRepository : RepositoryBase<ProductCategory>, IProductCategoryRepository
     {
         public ProductCategoryRepository(IDBFactory dBFactory) : base(dBFactory)
         {

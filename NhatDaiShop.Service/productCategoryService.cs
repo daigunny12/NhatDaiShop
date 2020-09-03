@@ -26,10 +26,10 @@ namespace NhatDaiShop.Service
 
     public class ProductCategoryService : IProductCategoryService
     {
-        private IProductCategoryReponsitory _ProductCategoryRepository;
+        private IProductCategoryRepository _ProductCategoryRepository;
         private IUnitOfWork _unitOfWork;
 
-        public ProductCategoryService(IProductCategoryReponsitory ProductCategoryRepository, IUnitOfWork unitOfWork)
+        public ProductCategoryService(IProductCategoryRepository ProductCategoryRepository, IUnitOfWork unitOfWork)
         {
             this._ProductCategoryRepository = ProductCategoryRepository;
             this._unitOfWork = unitOfWork;
