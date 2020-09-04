@@ -35,6 +35,15 @@
                 console.log('can not get list parent');
             });
         }
+
+        $scope.ChooseImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.product.Image = fileUrl;
+            }
+            finder.popup();
+        }
+
         LoadParentCategory();
     }
 })(angular.module('nhatdaishop.products'));
