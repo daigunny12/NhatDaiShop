@@ -44,6 +44,14 @@
             finder.popup();
         }
 
+        $scope.moreImages = [];
+        $scope.ChooseMoreImage = function (){
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.moreImages.push(fileUrl);
+            }
+        }
+
         LoadParentCategory();
     }
 })(angular.module('nhatdaishop.products'));

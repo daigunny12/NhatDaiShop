@@ -135,7 +135,7 @@ namespace NhatDaiShop.Web.API
                     var dbProductCategory = _productCategoryService.GetById(productCategoryViewModel.ID);
                     dbProductCategory.UpdateProductCategory(productCategoryViewModel);
                     dbProductCategory.UpdatedDate = DateTime.Now;
-                    _productCategoryService.Add(dbProductCategory);
+                    _productCategoryService.Update(dbProductCategory);
                     _productCategoryService.Save();
 
                     IMapper mapper = AutoMapperConfiguragtion.Mapper;

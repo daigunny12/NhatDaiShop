@@ -49,6 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NhatDaiShop.Common\NhatDaiShop.Common.csproj">
+      <Project>{a758e552-abcb-4e5b-ba38-97f27520e475}</Project>
+      <Name>NhatDaiShop.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NhatDaiShop.Data\NhatDaiShop.Data.csproj">
       <Project>{c398a058-5f17-4ca9-82a2-645c80aa97d7}</Project>
       <Name>NhatDaiShop.Data</Name>

@@ -119,7 +119,7 @@ namespace NhatDaiShop.Web.API
                     var dbProduct = _productService.GetById(productViewModel.ID);
                     dbProduct.UpdateProduct(productViewModel);
                     dbProduct.UpdatedDate = DateTime.Now;
-                    _productService.Add(dbProduct);
+                    _productService.Update(dbProduct);
                     _productService.Save();
 
                     IMapper mapper = AutoMapperConfiguragtion.Mapper;
@@ -130,6 +130,8 @@ namespace NhatDaiShop.Web.API
                 return response;
             });
         }
+
+
 
         [Route("delete")]
         [HttpDelete]

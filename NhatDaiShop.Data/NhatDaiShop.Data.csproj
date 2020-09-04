@@ -72,6 +72,10 @@
     <Compile Include="Migrations\202008221447494_Intergrate-AspnetIdentity.designer.cs">
       <DependentUpon>202008221447494_Intergrate-AspnetIdentity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009040837080_AddTagField.cs" />
+    <Compile Include="Migrations\202009040837080_AddTagField.designer.cs">
+      <DependentUpon>202009040837080_AddTagField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NhatDaiShopDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008221447494_Intergrate-AspnetIdentity.resx">
       <DependentUpon>202008221447494_Intergrate-AspnetIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009040837080_AddTagField.resx">
+      <DependentUpon>202009040837080_AddTagField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

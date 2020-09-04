@@ -21,6 +21,14 @@
                 });
         }
 
+        $scope.ChooseImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.product.productCategory = fileUrl;
+            }
+            finder.popup();
+        }
+
         function GetSeoTitle() {
             $scope.productCategory.Alias = commonService.getSeoTitle($scope.productCategory.Name);
         }

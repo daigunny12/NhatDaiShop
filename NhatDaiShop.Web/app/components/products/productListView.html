@@ -72,7 +72,7 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <button class="btn btn-primary" ui-sref="edit_products_category({id:item.ID})"><i class="fa fa-pencil-alt"></i></button>
+                                        <button class="btn btn-primary" ui-sref="product_edit({id:item.ID})"><i class="fa fa-pencil-alt"></i></button>
                                         <button class="btn btn-danger" ng-click="deleteProductCategory(item.ID)"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
@@ -91,7 +91,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getproductCategories(page)"></pager-directive>
+            <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getproducts(page)"></pager-directive>
         </div>
     </div>
     <!-- /.card -->

@@ -21,6 +21,13 @@
                 notificationService.error(error.data);
             });
         }
+        $scope.ChooseImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.product.productCategory = fileUrl;
+            }
+            finder.popup();
+        }
 
         function UpdateProductCategory() {
             apiService.put('/api/productcategory/update', $scope.productCategory,

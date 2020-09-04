@@ -62,6 +62,8 @@
                 <label for="inputEmail3" class="col-sm-2 col-form-label">hình ảnh</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="image" ng-model="productCategory.Image">
+                    <span class="has-error" ng-show="frmAddProductCategory.image.$error.maxlength">Hình ảnh chỉ được 256 ký tự</span>
+                    <button class="btn btn-default" type="button" ng-click="ChooseImage()">Chọn ảnh</button>
                 </div>
             </div>
 
