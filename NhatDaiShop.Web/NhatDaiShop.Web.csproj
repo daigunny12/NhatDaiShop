@@ -214,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\AccountController.cs" />
+    <Compile Include="API\homeController.cs" />
     <Compile Include="API\PostCategoryController.cs" />
     <Compile Include="API\ProductCategoryController.cs" />
     <Compile Include="API\ProductsController.cs" />
@@ -249,7 +250,7 @@
     <Content Include="app\components\home\homeView.html" />
     <Content Include="app\components\login\loginController.js" />
     <Content Include="app\components\login\loginView.html" />
-    <Content Include="app\components\login\rootController.js" />
+    <Content Include="app\components\home\rootController.js" />
     <Content Include="app\components\products\productAddView.html" />
     <Content Include="app\components\products\products.module.js" />
     <Content Include="app\components\products\productAddController.js" />
@@ -269,7 +270,10 @@
     <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\modules\nhatdaishop.common.js" />
     <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\authData.js" />
+    <Content Include="app\shared\services\authenticationService.js" />
     <Content Include="app\shared\services\commonService.js" />
+    <Content Include="app\shared\services\loginService.js" />
     <Content Include="app\shared\services\notificationService.js" />
     <Content Include="app\shared\views\baseView.html" />
     <Content Include="Assets\admin\css\adminlte.css" />
@@ -325,6 +329,22 @@
     <Content Include="Assets\admin\js\pages\dashboard.js" />
     <Content Include="Assets\admin\js\pages\dashboard2.js" />
     <Content Include="Assets\admin\js\pages\dashboard3.js" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.css" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.js" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.min.css" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.min.js" />
+    <Content Include="bower_components\angular-loading-bar\Gruntfile.js" />
+    <Content Include="bower_components\angular-loading-bar\index.js" />
+    <Content Include="bower_components\angular-loading-bar\src\loading-bar.css" />
+    <Content Include="bower_components\angular-loading-bar\src\loading-bar.js" />
+    <Content Include="bower_components\angular-local-storage\.gitattributes" />
+    <Content Include="bower_components\angular-local-storage\.gitignore" />
+    <Content Include="bower_components\angular-local-storage\demo\demo-app.js" />
+    <Content Include="bower_components\angular-local-storage\demo\demo-style.css" />
+    <Content Include="bower_components\angular-local-storage\demo\demo.html" />
+    <Content Include="bower_components\angular-local-storage\dist\angular-local-storage.js" />
+    <Content Include="bower_components\angular-local-storage\dist\angular-local-storage.min.js" />
+    <Content Include="bower_components\angular-local-storage\index.js" />
     <Content Include="bower_components\angular-ui-router\jest.config.js" />
     <Content Include="bower_components\angular-ui-router\karma.conf.js" />
     <Content Include="bower_components\angular-ui-router\release\angular-ui-router.js" />
@@ -4435,13 +4455,6 @@
     <Content Include="Assets\admin\js\adminlte.js.map" />
     <Content Include="Assets\admin\js\adminlte.min.js.map" />
     <Content Include="bower.json" />
-    <Content Include="bower_components\angular\.bower.json" />
-    <Content Include="bower_components\angular\angular.min.js.gzip" />
-    <Content Include="bower_components\angular\angular.min.js.map" />
-    <Content Include="bower_components\angular\bower.json" />
-    <Content Include="bower_components\angular\LICENSE.md" />
-    <Content Include="bower_components\angular\package.json" />
-    <Content Include="bower_components\angular\README.md" />
     <Content Include="bower_components\jquery\.bower.json" />
     <Content Include="bower_components\jquery\bower.json" />
     <Content Include="bower_components\jquery\dist\jquery.min.map" />
@@ -4823,6 +4836,32 @@
     <Content Include="bower_components\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="bower_components\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bower_components\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="bower_components\angular-loading-bar\.bower.json" />
+    <Content Include="bower_components\angular-loading-bar\bower.json" />
+    <Content Include="bower_components\angular-loading-bar\CHANGELOG.md" />
+    <Content Include="bower_components\angular-loading-bar\CONTRIBUTING.md" />
+    <Content Include="bower_components\angular-loading-bar\ISSUE_TEMPLATE.md" />
+    <Content Include="bower_components\angular-loading-bar\LICENSE" />
+    <Content Include="bower_components\angular-loading-bar\package.json" />
+    <Content Include="bower_components\angular-loading-bar\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="bower_components\angular-loading-bar\README.md" />
+    <Content Include="bower_components\angular-local-storage\.bower.json" />
+    <Content Include="bower_components\angular-local-storage\.bowerrc" />
+    <Content Include="bower_components\angular-local-storage\.editorconfig" />
+    <Content Include="bower_components\angular-local-storage\.travis.yml" />
+    <Content Include="bower_components\angular-local-storage\bower.json" />
+    <Content Include="bower_components\angular-local-storage\CHANGELOG.md" />
+    <Content Include="bower_components\angular-local-storage\dist\angular-local-storage.min.js.map" />
+    <Content Include="bower_components\angular-local-storage\LICENSE" />
+    <Content Include="bower_components\angular-local-storage\package.json" />
+    <Content Include="bower_components\angular-local-storage\README.md" />
+    <Content Include="bower_components\angular\.bower.json" />
+    <Content Include="bower_components\angular\angular.min.js.gzip" />
+    <Content Include="bower_components\angular\angular.min.js.map" />
+    <Content Include="bower_components\angular\bower.json" />
+    <Content Include="bower_components\angular\LICENSE.md" />
+    <Content Include="bower_components\angular\package.json" />
+    <Content Include="bower_components\angular\README.md" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
