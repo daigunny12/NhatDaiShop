@@ -3,11 +3,11 @@ using NhatDaiShop.Model.Models;
 
 namespace NhatDaiShop.Data.Repositories
 {
-    public interface IFooterReponsitory: IRepository<Footer>
+    public interface IFooterRepository: IRepository<Footer>
     {
     }
 
-    public class FooterRepository : RepositoryBase<Footer>, IFooterReponsitory
+    public class FooterRepository : RepositoryBase<Footer>, IFooterRepository
     {
         public FooterRepository(IDBFactory dBFactory) : base(dBFactory)
         {

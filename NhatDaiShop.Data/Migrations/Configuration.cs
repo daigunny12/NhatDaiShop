@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using NhatDaiShop.Common;
     using NhatDaiShop.Model.Models;
     using System;
     using System.Data.Entity.Migrations;
@@ -40,6 +41,14 @@
             var adminUser = manager.FindByEmail("daigunny12@gmail.com");
 
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+        }
+
+        public void CreateFooter(NhatDaiShopDBContext context)
+        {
+            if (context.Footers.Count(x=> x.ID == CommonConstants.DefaultFooterID) == 0)
+            {
+                string content = ""; 
+            }
         }
     }
 }

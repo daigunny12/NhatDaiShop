@@ -10,5 +10,6 @@ namespace NhatDaiShop.Common
     {
         public const string ProductTag = "product";
         public const string ProstTag = "post";
+        public const string DefaultFooterID = "default";
     }
 }

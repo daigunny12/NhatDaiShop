@@ -19,6 +19,7 @@ namespace NhatDaiShop.Web.Mappings
                 cfg.CreateMap<ProductCategory, ProductCategoryViewModel>();
                 cfg.CreateMap<Order, OrderViewModel>();
                 cfg.CreateMap<OrderDetail, OrderDetailViewModel>();
+                cfg.CreateMap<Footer, FooterViewModel>();
             });
             Mapper = config.CreateMapper();
             config.AssertConfigurationIsValid();
