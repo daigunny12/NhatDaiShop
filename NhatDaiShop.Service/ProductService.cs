@@ -3,6 +3,7 @@ using NhatDaiShop.Data.Infrastructure;
 using NhatDaiShop.Data.Repositories;
 using NhatDaiShop.Model.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NhatDaiShop.Service
 {
@@ -17,6 +18,10 @@ namespace NhatDaiShop.Service
         IEnumerable<Product> GetAll();
 
         IEnumerable<Product> GetAll(string keyword);
+
+        IEnumerable<Product> GetLastest(int top);
+
+        IEnumerable<Product> GetHotProduct(int top);
 
         Product GetById(int id);
 
@@ -92,6 +97,17 @@ namespace NhatDaiShop.Service
         public Product GetById(int id)
         {
             return _ProductRepository.GetSingleById(id);
+        }
+
+        public IEnumerable<Product> GetHotProduct(int top)
+        {
+            return _ProductRepository.GetMulti(x => x.Status && x.HotFlag == true).OrderByDescending(x => x.CreatedDate).Take(top);
+
+        }
+
+        public IEnumerable<Product> GetLastest(int top)
+        {
+            return _ProductRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(top);
         }
 
         public void Save()

@@ -5,6 +5,7 @@
     using NhatDaiShop.Common;
     using NhatDaiShop.Model.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -16,6 +17,36 @@
         }
 
         protected override void Seed(NhatDaiShop.Data.NhatDaiShopDBContext context)
+        {
+            CreateSlide(context);
+        }
+
+        private void CreateProductCategorySample(NhatDaiShopDBContext context)
+        {
+            if (context.ProductCategories.Count() == 0)
+            {
+                List<ProductCategory> listProductCategory = new List<ProductCategory>()
+            {
+                new ProductCategory() { Name="Điện lạnh",Alias="dien-lanh",Status=true },
+                 new ProductCategory() { Name="Viễn thông",Alias="vien-thong",Status=true },
+                  new ProductCategory() { Name="Đồ gia dụng",Alias="do-gia-dung",Status=true },
+                   new ProductCategory() { Name="Mỹ phẩm",Alias="my-pham",Status=true }
+            };
+                context.ProductCategories.AddRange(listProductCategory);
+                context.SaveChanges();
+            }
+
+        }
+
+        public void CreateFooter(NhatDaiShopDBContext context)
+        {
+            if (context.Footers.Count(x=> x.ID == CommonConstants.DefaultFooterID) == 0)
+            {
+           
+            }
+        }
+
+        private void CreateUser(NhatDaiShopDBContext context)
         {
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new NhatDaiShopDBContext()));
 
@@ -43,11 +74,38 @@
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
         }
 
-        public void CreateFooter(NhatDaiShopDBContext context)
+        private void CreateSlide(NhatDaiShopDBContext context)
         {
-            if (context.Footers.Count(x=> x.ID == CommonConstants.DefaultFooterID) == 0)
+            if (context.Slides.Count() == 0)
             {
-                string content = ""; 
+                List<Slide> listSlide = new List<Slide>()
+                {
+                    new Slide() {
+                        Name ="Slide 1",
+                        DisplayOrder =1,
+                        Status =true,
+                        Url ="#",
+                        Image ="/Assets/client/images/bag.jpg",
+                        Content =@"	<h2>FLAT 50% 0FF</h2>
+                                <label>FOR ALL PURCHASE <b>VALUE</b></label>
+                                <p>Lorem ipsum dolor sit amet, consectetur 
+                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et </ p >
+                        <span class=""on-get"">GET NOW</span>" },
+                    new Slide() {
+                        Name ="Slide 2",
+                        DisplayOrder =2,
+                        Status =true,
+                        Url ="#",
+                        Image ="/Assets/client/images/bag1.jpg",
+                    Content=@"<h2>FLAT 50% 0FF</h2>
+                                <label>FOR ALL PURCHASE <b>VALUE</b></label>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </ p >
+
+                                <span class=""on-get"">GET NOW</span>"},
+                };
+                context.Slides.AddRange(listSlide);
+                context.SaveChanges();
             }
         }
     }

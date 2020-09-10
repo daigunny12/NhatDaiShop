@@ -15,16 +15,32 @@ namespace NhatDaiShop.Web.Controllers
     {
         IProductCategoryService _productCategoryService;
         ICommonService _commonService;
-        public HomeController(IProductCategoryService productCategoryService, ICommonService commonService)
+        IProductService _productService;
+        public HomeController(IProductCategoryService productCategoryService, ICommonService commonService, IProductService productService)
         {
             this._productCategoryService = productCategoryService;
             this._commonService = commonService;
+            this._productService = productService;
         }
 
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-            return View();
+            var slideModel = _commonService.GetSlides();
+            IMapper mapper = AutoMapperConfiguragtion.Mapper;
+            var slideViewModel = mapper.Map<IEnumerable<Slide>,IEnumerable<SlideViewModel>>(slideModel);
+
+            var homeViewModel = new HomeViewModel();
+            homeViewModel.Slides = slideViewModel;
+
+            var lastestProductModel = _productService.GetLastest(3);
+            var lastestProductViewModel = mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(lastestProductModel);
+            homeViewModel.LastestProducts = lastestProductViewModel;
+
+            var topsaleProductModel = _productService.GetHotProduct(3);
+            var topsaleProductViewModel = mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(topsaleProductModel);
+            homeViewModel.TopSaleProducts = topsaleProductViewModel;
+
+            return View(homeViewModel);
         }
 
         [ChildActionOnly]
