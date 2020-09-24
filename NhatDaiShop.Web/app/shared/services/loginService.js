@@ -13,19 +13,21 @@
                         { 'Content-Type': 'application/x-www-form-urlencoded' }
                 }).then(function (response) {
                     userInfo = {
-                        accessToken: response.access_token,
+                        accessToken: response.data.access_token,
                         userName: userName
                     };
                     authenticationService.setTokenInfo(userInfo);
                     authData.authenticationData.IsAuthenticated = true;
                     authData.authenticationData.userName = userName;
+                    authData.authenticationData.accessToken = userInfo.accessToken;
+
                     deferred.resolve(null);
                 },
                     function (err, status) {
                         authData.authenticationData.IsAuthenticated = false;
                         authData.authenticationData.userName = "";
                         deferred.resolve(err);
-                    });
+                    })
                 return deferred.promise;
             }
 

@@ -16,6 +16,7 @@ using System.Web.Script.Serialization;
 namespace NhatDaiShop.Web.API
 {
     [RoutePrefix("api/products")]
+    [Authorize]
     public class ProductsController: ApiControllerBase
     {
         private IProductService _productService;
