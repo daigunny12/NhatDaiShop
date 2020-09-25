@@ -5,7 +5,7 @@
     <ul class="menu">
         @foreach (var category in Model.Where(x => x.ParentId == null))
         {
-            var url = "/" + category.Alias + ".pc-" + category.ID + ".html";
+            var url = "/" + category.Alias + "pc-" + category.ID;
             var childCategories = Model.Where(x => x.ParentId == category.ID);
 
             <li class="item1">

@@ -23,7 +23,10 @@ namespace NhatDaiShop.Service
 
         IEnumerable<Product> GetHotProduct(int top);
 
+        IEnumerable<Product> GetListProducByCategoryIdPaging(int categoryId, int page, int pageSize, out int totalRow);
+
         Product GetById(int id);
+
 
         void Save();
     }
@@ -108,6 +111,14 @@ namespace NhatDaiShop.Service
         public IEnumerable<Product> GetLastest(int top)
         {
             return _ProductRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(top);
+        }
+
+        public IEnumerable<Product> GetListProducByCategoryIdPaging(int categoryId, int page, int pageSize, out int totalRow)
+        {
+            var query = _ProductRepository.GetMulti(x => x.Status && x.CategoryID == categoryId);
+            totalRow = query.Count();
+
+            return query.Skip((page - 1)*pageSize).Take(pageSize);
         }
 
         public void Save()

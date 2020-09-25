@@ -24,6 +24,7 @@ namespace NhatDaiShop.Web.Controllers
         }
 
         public ActionResult Index()
+
         {
             var slideModel = _commonService.GetSlides();
             IMapper mapper = AutoMapperConfiguragtion.Mapper;
