@@ -28,11 +28,11 @@ namespace NhatDaiShop.Web.Controllers
             return View();
         }
 
-        public ActionResult Category(int id, int page = 1)
+        public ActionResult Category(int id, int page = 1, string sort = "")
         {
             int pageSize = int.Parse(ConfigHelper.GetByKey("PageSize"));
             int totalRow = 0; 
-            var productModel = _productService.GetListProducByCategoryIdPaging(id, page, pageSize, out totalRow);
+            var productModel = _productService.GetListProducByCategoryIdPaging(id, page, pageSize, sort, out totalRow);
             IMapper mapper = AutoMapperConfiguragtion.Mapper;
             var productViewModel = mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(productModel);
             int totalPage = (int)Math.Ceiling((double)totalRow/pageSize);
