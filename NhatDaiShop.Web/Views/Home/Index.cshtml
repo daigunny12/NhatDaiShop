@@ -30,6 +30,13 @@
                     </article>
                 }
             </div>
+            <ul class="wmuSliderPagination">
+                @for (int i = 0; i < Model.Slides.Count(); i++)
+                {
+                    <li><a href="#" class="">i</a></li>
+                }
+
+            </ul>
         </div>
     </div>
     <div class="products">
@@ -41,7 +48,7 @@
         {
             var url = "/" + product.Alias + "p-" + product.ID;
             <div class="col-md-4 chain-grid grid-top-chain">
-                <a href="@url"><img class="img-responsive chain" src="@product.Image" alt=" " /></a>
+                <a href="@url"><img class="img-responsive chain" src="@product.Image"/></a>
                 <span class="star"> </span>
                 <div class="grid-chain-bottom">
                     <h6><a href="@url">@product.Name</a></h6>
@@ -65,7 +72,7 @@
                                 <label for="rating-input-1-1" class="rating-star"> </label>
                             </span>
                         </div>
-                        <a class="now-get get-cart" href="#">Mua hàng</a>
+                        <a class="now-get get-cart btnAddToCart" href="#" data-id="@product.ID">Mua hàng</a>
                         <div class="clearfix"> </div>
                     </div>
                 </div>

@@ -12,8 +12,8 @@
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('base', {
-                url: "",
-                templateUrl: "/app/shared/views/baseView.html",
+                url: '',
+                templateUrl: '/app/shared/views/baseView.html',
                 abstract: true
             })
             .state('login', {

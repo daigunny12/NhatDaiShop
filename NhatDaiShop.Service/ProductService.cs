@@ -25,13 +25,15 @@ namespace NhatDaiShop.Service
 
         IEnumerable<Product> GetListProducByCategoryIdPaging(int categoryId, int page, int pageSize, string sort, out int totalRow);
 
+        IEnumerable<string> GetListProductByName(string name);
+
         Product GetById(int id);
 
 
         void Save();
     }
 
-    public class ProductService : IProductService
+    public class ProductService : IProductService 
     {
         private IProductRepository _ProductRepository;
         private ITagRepository _tagRepository;
@@ -136,6 +138,11 @@ namespace NhatDaiShop.Service
             totalRow = query.Count();
 
             return query.Skip((page - 1)*pageSize).Take(pageSize);
+        }
+
+        public IEnumerable<string> GetListProductByName(string name)
+        {
+            return _ProductRepository.GetMulti(x => x.Status && x.Name.Contains(name)).Select(y => y.Name);
         }
 
         public void Save()
